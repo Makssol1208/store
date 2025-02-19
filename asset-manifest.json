@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/store/static/css/main.ef6ed7f4.css",
+    "main.js": "/store/static/js/main.6b352dfe.js",
+    "static/media/hero.png": "/store/static/media/hero.b9f467f84e2d874ed2b0.png",
+    "static/media/Banner.jpg": "/store/static/media/Banner.cd19483948b56a330da7.jpg",
+    "static/media/bannerLeft_game.png": "/store/static/media/bannerLeft_game.62d96ab2a2a6d8435aa0.png",
+    "static/media/bannerLeft_sneekers.png": "/store/static/media/bannerLeft_sneekers.b8adeac1ad34a3b5550b.png",
+    "static/media/user.svg": "/store/static/media/user.1f8ad4a93c3466b794b462f379ff504c.svg",
+    "static/media/instagram.svg": "/store/static/media/instagram.80d5fd8f09bebeb2f4e711044da3614b.svg",
+    "static/media/cart.svg": "/store/static/media/cart.8838f746303550f7e72312334f34e8ed.svg",
+    "static/media/facebook.svg": "/store/static/media/facebook.7e896a00a223dce556da9b1442276bbc.svg",
+    "static/media/youtube.svg": "/store/static/media/youtube.84e3c025299f16b8c65942e060bf6427.svg",
+    "static/media/seacrh.svg": "/store/static/media/seacrh.346f88788a4b69948f9c.svg",
+    "index.html": "/store/index.html",
+    "static/media/favor.svg": "/store/static/media/favor.8de129343dc4e487aff4081adf34f143.svg",
+    "main.ef6ed7f4.css.map": "/store/static/css/main.ef6ed7f4.css.map",
+    "main.6b352dfe.js.map": "/store/static/js/main.6b352dfe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ef6ed7f4.css",
+    "static/js/main.6b352dfe.js"
+  ]
+}
