@@ -11,7 +11,7 @@ import { store } from "./store/store";
 
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-    <BrowserRouter basename="https://makssol1208.github.io/store">
+    <BrowserRouter>
       <StrictMode>
         <App />
       </StrictMode>
