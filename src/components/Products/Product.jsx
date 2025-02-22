@@ -1,18 +1,37 @@
 import { Link } from "react-router-dom";
-import styles from "../../styles/blocks/singleProduct.module.css";
 import { ROUTES } from "../../utils/routes";
+import { useDispatch } from "react-redux";
+import { addItemToCart } from "../../store/user/userSlice";
+import { useEffect, useState } from "react";
+
 import Sidebar from "../Sidebar/Sidebar";
+import styles from "../../styles/blocks/singleProduct.module.css";
 
 const SIZES = [4.5, 5, 5.5];
 
-export default function Product({ title, price, images, description }) {
+export default function Product(item) {
+  const { title, price, images, description } = item;
+
+  const [currentImage, setCurrentImage] = useState();
+  const [currentSize, setCurrentSize] = useState();
+
+  const dispatch = useDispatch();
+  const addToCart = () => {
+    dispatch(addItemToCart(item));
+  };
+
+  useEffect(() => {
+    if (!images?.length) return;
+    setCurrentImage(images[0]);
+  }, [images]);
+
   return (
     <div className={styles.main}>
-      <Sidebar/>
+      <Sidebar />
       <section className={styles.single__product}>
         <div className={styles.img__wrap}>
           <div className={styles.img__big}>
-            <img className={styles.big} src={images} alt="Product" />
+            <img className={styles.big} src={currentImage} alt="Product" />
           </div>
 
           <div className={styles.little__img}>
@@ -23,7 +42,9 @@ export default function Product({ title, price, images, description }) {
                   src={image}
                   key={i}
                   alt="Product"
-                  onClick={() => {}}
+                  onClick={() => {
+                    setCurrentImage(image);
+                  }}
                 />
               ))}
             </div>
@@ -39,7 +60,15 @@ export default function Product({ title, price, images, description }) {
           <div className={styles.size}>
             <p>Sizes:</p>
             {SIZES.map((size) => (
-              <span className={styles.size} onClick={() => {}} key={size}>
+              <span
+                className={`${styles.size} ${
+                  currentSize === size ? styles.active : ""
+                }`}
+                onClick={() => {
+                  setCurrentSize(size);
+                }}
+                key={size}
+              >
                 {size}
               </span>
             ))}
@@ -49,7 +78,7 @@ export default function Product({ title, price, images, description }) {
           </div>
           <div className={styles.buttons}>
             <div className={styles.button}>
-              <a href="#!" className={styles.btn}>
+              <a onClick={addToCart} href="#!" className={styles.btn} disabled={!currentSize}>
                 Add to cart
               </a>
             </div>
