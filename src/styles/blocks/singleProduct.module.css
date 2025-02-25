@@ -68,7 +68,7 @@
 .color,
 .size {
   font-weight: 500;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   font-size: 14px;
   color: #576067;
 }
@@ -106,6 +106,7 @@
 .size span {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 37px;
   height: 25px;
   font-weight: 500;
@@ -125,6 +126,7 @@
   font-weight: 400;
   font-size: 12px;
   color: #b8b8b8;
+  
 }
 
 .buttons {
@@ -136,6 +138,7 @@
 .btn {
   display: inline-block;
   padding: 11px 20px;
+  cursor: not-allowed;
 
   font-weight: 600;
   font-size: 16px;
