@@ -1,0 +1,108 @@
+.nav__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 22px 0 22px;
+}
+
+.logo img {
+  width: 78px;
+  height: 32px;
+}
+
+.user__nav {
+  display: flex;
+  align-items: center;
+  column-gap: 17px;
+}
+
+.user__avatar {
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  width: 27px;
+  height: 25px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.user__avatar::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -7px;
+  left: -3px;
+
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-content);
+}
+
+.user__name {
+  font-weight: 400;
+  font-size: 11px;
+  color: #b8b8b8;
+}
+
+.nav__like {
+  color: #fff;
+}
+
+.form {
+  padding: 9px 0 9px 39px;
+  width: 303px;
+  height: 27px;
+
+  background-repeat: no-repeat;
+  background-position: 7px;
+  background-image: url("./../../img/header/seacrh.svg");
+
+  border-radius: 6px;
+  font-weight: 400;
+  font-size: 9px;
+  color: #b8b8b8;
+  background-color: var(--color-content);
+}
+
+.holder {
+  width: 303px;
+  height: 27px;
+  border-radius: 6px;
+  background-color: #b8b8b8;
+}
+
+.box {
+  display: flex;
+  column-gap: 10px;
+}
+
+.favorite,
+.cart {
+  display: inline-block;
+}
+
+.cart {
+  position: relative;
+}
+
+.box img {
+  width: 24px;
+  height: 24px;
+}
+
+.cart__number {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  line-height: 12px;
+  bottom: -3px;
+  right: -3px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 9px;
+  color: #f6f6f7;
+  background-color: #8b57c6;
+  border-radius: 50%;
+}

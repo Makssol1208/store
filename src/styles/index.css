@@ -1,0 +1,12 @@
+@import "./reset.css";
+@import "./base.module.css";
+
+@import "./blocks/header.module.css";
+@import "./blocks/sidebar.module.css";
+@import "./blocks/hero.module.css";
+@import "./blocks/footer.module.css";
+@import "./blocks/products.module.css";
+@import "./blocks/categories.module.css";
+@import "./blocks/banner.module.css";
+@import "./blocks/singleProduct.module.css";
+@import "./blocks/signUp.module.css";

@@ -1,0 +1,98 @@
+.banner {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 6px;
+  background-color: var(--color-content);
+}
+
+.left {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 80px;
+  padding-left: 103px;
+
+  color: var(--accent-hover);
+}
+
+.left:before {
+  content: "";
+  position: absolute;
+  display: block;
+
+  left: -34px;
+  bottom: 55px;
+  width: 204px;
+  height: 170px;
+  background-image: url('../../img/banner/bannerLeft_sneekers.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.left::after {
+  content: "";
+  position: absolute;
+  display: block;
+  right: -163px;
+  bottom: -20px;
+  width: 269px;
+  height: 151px;
+  background-image: url("../../img/banner/bannerLeft_game.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  font-weight: 300;
+  font-size: 70px;
+}
+
+.content span {
+  margin-top: 20px;
+  font-weight: 300;
+  font-size: 150px;
+}
+
+.more {
+  display: inline-block;
+  padding: 11px 20px;
+  margin-top: 60px;
+
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1;
+  color: #fff;
+  border-radius: 6px;
+  background-color: var(--accent);
+  transition: 0.2s ease-in;
+}
+
+.more:hover {
+  background-color: var(--accent-hover);
+}
+
+.right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.discount {
+  position: absolute;
+  bottom: 24px;
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--body);
+}
+
+.discount span {
+  font-weight: 700;
+  color: var(--accent-hover);
+}

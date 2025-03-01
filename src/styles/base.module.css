@@ -1,0 +1,43 @@
+/* Font */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,regular,500,600,700,800,900);
+
+:root {
+  --color-body: #212123;
+  --color-content: #191919;
+  --accent: #8b57c6;
+  --accent-hover: #6c3eb8;
+  --font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+  font-family: var(--font-family);
+  background-color: var(--color-body);
+}
+
+.app {
+  max-width: 1300px;
+  min-height: 100%;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 100%;
+}
