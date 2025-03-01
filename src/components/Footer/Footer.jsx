@@ -17,7 +17,14 @@ export default function Footer() {
             <img src={Logo} alt="stuff" />
           </Link>
           <p>
-            Developed by <span>Maks Soloviov</span>
+            Developed by{" "}
+            <a
+              href="https://github.com/Makssol1208"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>Maks Soloviov</span>
+            </a>
           </p>
           <div className="footer__social">
             <a href="https://youtube.com" target="_blank" rel="noreferrer">
