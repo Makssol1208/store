@@ -1,8 +1,11 @@
 import React from "react";
-import styles from "../../styles/blocks/header.module.css";
-
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
+import { toggleForm } from "../../store/user/userSlice";
 import { ROUTES } from "../../utils/routes";
+
+import styles from "../../styles/blocks/header.module.css";
 
 import Logo from "../../img/header/LOGO.png";
 import Avatar from "../../img/header/user.svg";
@@ -10,6 +13,13 @@ import Favourite from "../../img/header/favor.svg";
 import Cart from "../../img/header/cart.svg";
 
 export default function Header() {
+  const dispatch = useDispatch();
+  const { currentUser } = useSelector(({ user }) => user);
+
+  const handleClick = () => {
+    if (!currentUser) dispatch(toggleForm(true));
+  };
+
   return (
     <div>
       <header className={styles.header}>
@@ -22,6 +32,7 @@ export default function Header() {
               <img
                 alt="avatar"
                 className={styles.user__avatar}
+                onClick={handleClick}
                 src={Avatar}
                 // style={{ backgroundImage: `url(${Avatar})` }}
               />

@@ -6,7 +6,7 @@ export const createUser = createAsyncThunk(
   "users/createUser",
   async (payload, thunkAPI) => {
     try {
-      const res = await axios.post(`${BASE_URL}/users`,payload);
+      const res = await axios.post(`${BASE_URL}/users`, payload);
       return res.data;
     } catch (error) {
       console.log(error);
@@ -18,9 +18,11 @@ export const createUser = createAsyncThunk(
 const userSlice = createSlice({
   name: "user",
   initialState: {
-    currentUser: {},
+    currentUser: null,
     cart: [],
     isLoading: false,
+    formType: "signup",
+    showForm: false,
   },
   reducers: {
     addItemToCart: (state, { payload }) => {
@@ -37,14 +39,17 @@ const userSlice = createSlice({
 
       state.cart = newCart;
     },
-  },
-    extraReducers: (builder) => {
-      builder.addCase(createUser.fulfilled, (state,{payload}) => {
-        state.currentUser = payload;
-      });
+    toggleForm: (state, { payload }) => {
+      state.showForm = payload;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(createUser.fulfilled, (state, { payload }) => {
+      state.currentUser = payload;
+    });
+  },
 });
 
-export const { addItemToCart } = userSlice.actions;
+export const { addItemToCart, toggleForm } = userSlice.actions;
 
 export default userSlice.reducer;

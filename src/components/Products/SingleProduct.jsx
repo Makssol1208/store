@@ -32,7 +32,7 @@ export default function SingleProduct() {
   return (
     <>
       <Product {...data} />
-      <Products products={related} amount={5} title="Related Products" />
+      <Products products={list} amount={5} title="Related Products" />
     </>
   );
 }
