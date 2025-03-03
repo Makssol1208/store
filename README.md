@@ -1,1 +1,1 @@
-## PET project "Shop" using fake API "https://fakeapi.platzi.com"
+## pet project "Shop",using fake API "https://fakeapi.platzi.com"
