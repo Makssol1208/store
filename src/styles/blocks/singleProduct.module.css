@@ -13,7 +13,7 @@
 .single__product {
   display: flex;
   column-gap: 31px;
-  width: 950px;
+  max-width: 950px;
   height: 423px;
   color: #fff;
   padding: 24px;

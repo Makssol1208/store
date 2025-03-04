@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { toggleForm } from "../../store/user/userSlice";
 import { ROUTES } from "../../utils/routes";
+import { toggleForm } from "../../store/user/userSlice";
 
 import styles from "../../styles/blocks/header.module.css";
 
@@ -15,6 +15,14 @@ import Cart from "../../img/header/cart.svg";
 export default function Header() {
   const dispatch = useDispatch();
   const { currentUser } = useSelector(({ user }) => user);
+
+  const [values, setValues] = useState({ name: "Guest", avatar: Avatar });
+
+  useEffect(() => {
+    if (!currentUser) return;
+
+    setValues(currentUser);
+  }, [currentUser]);
 
   const handleClick = () => {
     if (!currentUser) dispatch(toggleForm(true));
@@ -29,14 +37,14 @@ export default function Header() {
               <img src={Logo} alt="stuff" />
             </Link>
             <div className={styles.user__nav}>
-              <img
-                alt="avatar"
+              <div
+                // alt="avatar"
                 className={styles.user__avatar}
                 onClick={handleClick}
-                src={Avatar}
-                // style={{ backgroundImage: `url(${Avatar})` }}
+                // src={Avatar}
+                style={{ backgroundImage: `url(${values.avatar})` }}
               />
-              <span className={styles.user__name}>Hello, Maks Soloviov</span>
+              <span className={styles.user__name}>Hello, {values.name}</span>
             </div>
 
             <form>

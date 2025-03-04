@@ -11,19 +11,19 @@ const SIZES = [4.5, 5, 5.5];
 
 export default function Product(item) {
   const { title, price, images, description } = item;
+  const dispatch = useDispatch();
 
   const [currentImage, setCurrentImage] = useState();
   const [currentSize, setCurrentSize] = useState();
-
-  const dispatch = useDispatch();
-  const addToCart = () => {
-    dispatch(addItemToCart(item));
-  };
 
   useEffect(() => {
     if (!images?.length) return;
     setCurrentImage(images[0]);
   }, [images]);
+
+  const addToCart = () => {
+    dispatch(addItemToCart(item));
+  };
 
   return (
     <div className={styles.main}>
@@ -78,7 +78,12 @@ export default function Product(item) {
           </div>
           <div className={styles.buttons}>
             <div className={styles.button}>
-              <a onClick={addToCart} href="#!" className={styles.btn} disabled={!currentSize}>
+              <a
+                onClick={addToCart}
+                href="#!"
+                className={styles.btn}
+                disabled={!currentSize}
+              >
                 Add to cart
               </a>
             </div>
