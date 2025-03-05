@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { loginUser } from "../../store/user/userSlice";
+import { updateUser } from "../../store/user/userSlice";
 
 import closeBtn from "../../img/product/close.svg";
 import styles from "../../styles/blocks/signUp.module.css";
@@ -24,7 +24,7 @@ export default function UserLoginForm({ toggleCurrentFormType,closeForm }) {
     const isNotEmpty = Object.values(values).every((val) => val);
     if (!isNotEmpty) return;
 
-    dispatch(loginUser(values));
+    dispatch(updateUser(values));
     closeForm();
   };
 
@@ -37,7 +37,7 @@ export default function UserLoginForm({ toggleCurrentFormType,closeForm }) {
       >
         <div className={styles.signUp__wrapper}>
           <div className={styles["signUp__title-wrap"]}>
-            <h2>Log in</h2>
+            <h2>Login</h2>
             <img
               src={closeBtn}
               alt="close"
@@ -80,7 +80,6 @@ export default function UserLoginForm({ toggleCurrentFormType,closeForm }) {
             <button
               type="submit"
               className={styles.submit}
-              onClick={handleSubmit}
             >
               Login
             </button>

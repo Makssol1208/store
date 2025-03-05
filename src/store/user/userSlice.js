@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { BASE_URL } from "../../utils/url";
+
 import axios from "axios";
 
 export const createUser = createAsyncThunk(
@@ -20,14 +21,25 @@ export const loginUser = createAsyncThunk(
   async (payload, thunkAPI) => {
     try {
       const res = await axios.post(`${BASE_URL}/auth/login`, payload);
-      console.log(res);
-      const login = await axios(`${BASE_URL}/auth/profile`, {
+      const login = await axios.get(`${BASE_URL}/auth/profile`, {
         headers: {
-          Authorization: `Bearer ${res.data.access_token}`,
+          Authorization: `Bearer ${res.data?.access_token}`,
         },
       });
-
       return login.data;
+    } catch (error) {
+      console.log(error);
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+
+export const updateUser = createAsyncThunk(
+  "users/updateUser",
+  async (payload, thunkAPI) => {
+    try {
+      const res = await axios.put(`${BASE_URL}/users/${payload.id}`, payload);
+      return res.data;
     } catch (error) {
       console.log(error);
       return thunkAPI.rejectWithValue(error);
@@ -73,6 +85,7 @@ const userSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(createUser.fulfilled, addCurrentUser);
     builder.addCase(loginUser.fulfilled, addCurrentUser);
+    builder.addCase(updateUser.fulfilled, addCurrentUser);
   },
 });
 

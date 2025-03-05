@@ -102,7 +102,6 @@ export default function UserSignUp({ closeForm, toggleCurrentFormType }) {
             <button
               type="submit"
               className={styles.submit}
-              onClick={handleSubmit}
             >
               Create an account
             </button>

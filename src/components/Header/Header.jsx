@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { ROUTES } from "../../utils/routes";
@@ -14,8 +14,9 @@ import Cart from "../../img/header/cart.svg";
 
 export default function Header() {
   const dispatch = useDispatch();
-  const { currentUser } = useSelector(({ user }) => user);
+  const navigate = useNavigate();
 
+  const { currentUser } = useSelector(({ user }) => user);
   const [values, setValues] = useState({ name: "Guest", avatar: Avatar });
 
   useEffect(() => {
@@ -26,6 +27,7 @@ export default function Header() {
 
   const handleClick = () => {
     if (!currentUser) dispatch(toggleForm(true));
+    else navigate(ROUTES.PROFILE);
   };
 
   return (
@@ -38,10 +40,8 @@ export default function Header() {
             </Link>
             <div className={styles.user__nav}>
               <div
-                // alt="avatar"
                 className={styles.user__avatar}
                 onClick={handleClick}
-                // src={Avatar}
                 style={{ backgroundImage: `url(${values.avatar})` }}
               />
               <span className={styles.user__name}>Hello, {values.name}</span>

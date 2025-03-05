@@ -21,6 +21,13 @@
   z-index: 98;
 }
 
+.wrapper {
+  width: 950px;
+  color: #fff;
+  border-radius: 6px;
+  background-color: var(--color-content);
+}
+
 .signUp_active {
   transform: translateX(0%);
 }
@@ -81,7 +88,6 @@
 
 .group input::placeholder {
   display: flex;
-  justify-content: center;
   font-weight: 400;
   font-size: 13px;
   color: #616e74;
@@ -119,4 +125,15 @@
 
 .submit:hover {
   background-color: var(--accent-hover);
+}
+
+.profile {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+span {
+  color: #fff;
+  font-size: 14px;
 }
