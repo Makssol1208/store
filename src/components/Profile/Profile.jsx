@@ -35,7 +35,7 @@ export default function Profile() {
   };
 
   return (
-    <div className="profile">
+    <div className={styles.profile}>
       {!currentUser ? (
         <span>You need to login</span>
       ) : (

@@ -4,7 +4,6 @@ import { ROUTES } from "../../utils/routes";
 import { useNavigate, useParams } from "react-router-dom";
 import { useGetProductQuery } from "../../store/api/apiSlice";
 import { useDispatch, useSelector } from "react-redux";
-
 import { getRelatedProducts } from "../../store/products/productsSlice";
 
 import Product from "./Product";
@@ -12,7 +11,7 @@ import Products from "./Products";
 
 export default function SingleProduct() {
   const dispatch = useDispatch();
-  const { list, related } = useSelector(({ products }) => products);
+  const { list } = useSelector(({ products }) => products);
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -27,7 +26,7 @@ export default function SingleProduct() {
   useEffect(() => {
     if (!data || !list.lenght) return;
     dispatch(getRelatedProducts(data.category.id));
-  }, [data, dispatch,list.lenght]);
+  }, [data, dispatch, list.lenght]);
 
   return (
     <>
