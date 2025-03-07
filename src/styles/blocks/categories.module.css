@@ -4,6 +4,14 @@
   background-color: var(--color-content);
 }
 
+.section h2 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+  padding-bottom: 24px;
+}
+
 .list{
   display: flex;
   margin-left: -15px;
