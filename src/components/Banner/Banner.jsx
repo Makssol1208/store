@@ -10,7 +10,7 @@ import styles from '../../styles/blocks/banner.module.css';
 import ImgBanner from '../../img/banner/Banner.jpg';
 
 export default function Banner() {
-  const { currentUser, cart } = useSelector(({ user }) => user);
+  const { currentUser } = useSelector(({ user }) => user);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();

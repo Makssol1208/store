@@ -1,5 +1,7 @@
 .hero {
-  width: 950px;
+  width: 100%;
+  max-width: 950px;
+  min-height: 423px;
   color: #fff;
   font-size: 42px;
   border-radius: 6px;

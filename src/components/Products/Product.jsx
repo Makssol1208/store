@@ -51,7 +51,7 @@ export default function Product(item) {
           </div>
         </div>
 
-        <div className={styles.single__product_desc}>
+        <div>
           <h2 className={styles.product__title}>{title}</h2>
           <span className={styles.single__product_price}>{price}$</span>
           <div className={styles.color}>
