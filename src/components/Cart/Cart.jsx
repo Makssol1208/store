@@ -1,13 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart, removeItemFromCart } from "../../store/user/userSlice";
 
-import styles from "../../styles/blocks/cart.module.css";
 import { sumBy } from "../../utils/common";
+
+import styles from "../../styles/blocks/cart.module.css";
 import Sidebar from "../Sidebar/Sidebar";
 
 export default function Cart() {
   const dispatch = useDispatch();
   const { cart } = useSelector(({ user }) => user);
+  
 
   const changeQuantity = (item, quantity) => {
     dispatch(addItemToCart({ ...item, quantity }));

@@ -18,6 +18,7 @@ export default function Header() {
   const navigate = useNavigate();
 
   const { currentUser, cart } = useSelector(({ user }) => user);
+  
 
   const [values, setValues] = useState({ name: "Guest", avatar: Avatar });
   const [searchValue, setSearchValue] = useState();
