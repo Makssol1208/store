@@ -2,14 +2,15 @@ import React, { useEffect } from "react";
 
 import { ROUTES } from "../../utils/routes";
 import { useNavigate, useParams } from "react-router-dom";
-import { useGetProductQuery } from "../../store/api/apiSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { useGetProductQuery } from "../../store/api/apiSlice";
 import { getRelatedProducts } from "../../store/products/productsSlice";
 
 import Product from "./Product";
 import Products from "./Products";
 
 export default function SingleProduct() {
+
   const dispatch = useDispatch();
   const { list } = useSelector(({ products }) => products);
   const { id } = useParams();

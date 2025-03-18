@@ -17,7 +17,7 @@ export default function Header() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { currentUser } = useSelector(({ user }) => user);
+  const { currentUser, cart } = useSelector(({ user }) => user);
 
   const [values, setValues] = useState({ name: "Guest", avatar: Avatar });
   const [searchValue, setSearchValue] = useState();
@@ -102,7 +102,9 @@ export default function Header() {
               </a>
               <Link to={ROUTES.CART} className={styles.cart}>
                 <img src={Cart} alt="Cart" />
-                <span className={styles.cart__number}>2</span>
+                {!!cart.length && (
+                  <span className={styles.cart__number}>{cart.length}</span>
+                )}
               </Link>
             </div>
           </div>
