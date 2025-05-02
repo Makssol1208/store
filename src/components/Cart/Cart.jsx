@@ -72,7 +72,7 @@ export default function Cart() {
 
                     <div
                       className={styles.close}
-                      onClick={() => removeItem(item.id)}
+                      onClick={() => removeItemFromCart(item.id)}
                     >
                       x
                     </div>

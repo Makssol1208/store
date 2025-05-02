@@ -6,8 +6,8 @@ import axios from "axios";
 export const getCategories = createAsyncThunk(
   "categories/getCategories",
   async () => {
-      const res = await axios(`${BASE_URL}/categories?offset=0&limit=6`);
-      return res.data;
+    const res = await axios(`${BASE_URL}/categories?offset=0&limit=6`);
+    return res.data;
   }
 );
 

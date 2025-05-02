@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import styles from "../../styles/blocks/sidebar.module.css";
 
 export default function Sidebar() {
-  const { list } = useSelector(({ categories }) => categories);  
+  const { list } = useSelector(({ categories }) => categories);    
 
   return (
     <div>
